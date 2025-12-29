@@ -5,11 +5,15 @@
   <title>AI / ML Portfolio | Guruprasad Doreswamy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
@@ -18,42 +22,93 @@
       color: #ffffff;
     }
 
-    /* ===== Top Navigation ===== */
-    .top-nav {
-      width: 100%;
-      padding: 20px 40px;
-      background: #0e141b;
+    /* ===== Layout ===== */
+    .layout {
       display: flex;
-      justify-content: space-between;
+      height: 100vh;
+    }
+
+    /* ===== Sidebar (SAME AS INDEX) ===== */
+    .sidebar {
+      width: 270px;
+      background: #0e141b;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
     }
 
-    .top-nav a {
-      color: #b3b3b3;
+    .profile-pic {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid #1f2a36;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .sidebar h2 {
+      font-size: 1.2em;
+      margin-bottom: 14px;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* ===== Social Icons ===== */
+    .social-icons {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .social-icons a {
+      width: 44px;
+      height: 44px;
+      background: #1a2028;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
       text-decoration: none;
-      font-size: 0.95em;
-      margin-left: 20px;
+      font-size: 1.1em;
+      transition: all 0.25s ease;
     }
 
-    .top-nav a:hover,
-    .top-nav a.active {
+    .social-icons a:hover {
+      background: #4f83cc;
+      transform: translateY(-2px);
+    }
+
+    /* ===== Menu ===== */
+    .menu {
+      width: 100%;
+    }
+
+    .menu a {
+      display: block;
+      width: 100%;
+      padding: 12px 20px;
+      margin-bottom: 8px;
+      text-decoration: none;
+      color: #b3b3b3;
+      border-radius: 6px;
+    }
+
+    .menu a.active,
+    .menu a:hover {
+      background: #16202c;
       color: #ffffff;
     }
 
-    .brand {
-      font-weight: 600;
-      font-size: 1em;
-      color: #ffffff;
+    /* ===== Content Area (Right Side) ===== */
+    .content {
+      flex: 1;
+      padding: 60px 80px;
+      overflow-y: auto;
     }
 
-    /* ===== Page Container ===== */
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
+    .content h1 {
       font-size: 2.6em;
       margin-bottom: 10px;
     }
@@ -90,12 +145,13 @@
     }
 
     /* ===== Responsive ===== */
-    @media (max-width: 768px) {
-      .top-nav {
-        padding: 15px 20px;
+    @media (max-width: 900px) {
+      .sidebar {
+        display: none;
       }
-      h1 {
-        font-size: 2.2em;
+
+      .content {
+        padding: 40px 20px;
       }
     }
   </style>
@@ -103,58 +159,80 @@
 
 <body>
 
-<!-- ===== Navigation ===== -->
-<header class="top-nav">
-  <div class="brand">Guruprasad Doreswamy</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html" class="active">Portfolio</a>
-  </nav>
-</header>
+<div class="layout">
 
-<!-- ===== Content ===== -->
-<div class="container">
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar">
+    <img src="assets/profile.jpg"
+         class="profile-pic"
+         alt="Profile photo">
 
-  <h1>AI / ML Portfolio</h1>
-  <p class="subtitle">
-    Decision-support systems for engineering, innovation, and scale
-  </p>
+    <h2>Guruprasad Doreswamy</h2>
 
-  <!-- Project 1 -->
-  <div class="project">
-    <h2>AI-Driven Idea Generation & Evaluation</h2>
+    <div class="social-icons">
+      <a href="https://github.com/gurudoreswamy" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://yourwebsite.com" target="_blank" aria-label="Website">
+        <i class="fas fa-globe"></i>
+      </a>
+    </div>
 
-    <p class="label">Problem</p>
-    <p>
-      Engineering idea generation was slow, manual, and dependent on a small
-      group of experts, limiting scalability and reuse of historical knowledge.
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="resume.html">Resume</a>
+    </nav>
+  </aside>
+
+  <!-- ===== Portfolio Content ===== -->
+  <main class="content">
+
+    <h1>AI / ML Portfolio</h1>
+    <p class="subtitle">
+      Decision-support systems for engineering, innovation, and scale
     </p>
 
-    <p class="label">Approach</p>
-    <p>
-      Designed an AI-assisted pipeline that transforms historical ideas into
-      structured, evaluable concepts using NLP, generative models, and
-      controlled prompting strategies.
-    </p>
+    <!-- Project 1 -->
+    <div class="project">
+      <h2>AI-Driven Idea Generation & Evaluation</h2>
 
-    <p class="label">System Design</p>
-    <p>
-      Historical ideas → NLP-based clustering → AI-driven idea generation →
-      rejection classification → human-in-the-loop evaluation → finalized ideas.
-    </p>
+      <p class="label">Problem</p>
+      <p>
+        Engineering idea generation was slow, manual, and dependent on a small
+        group of experts, limiting scalability and reuse of historical knowledge.
+      </p>
 
-    <p class="label">My Role</p>
-    <p>
-      Led problem framing, model strategy definition, evaluation criteria
-      design, and integration into engineering decision workflows.
-    </p>
+      <p class="label">Approach</p>
+      <p>
+        Designed an AI-assisted pipeline that transforms historical ideas into
+        structured, evaluable concepts using NLP, generative models, and
+        controlled prompting strategies.
+      </p>
 
-    <p class="label">Outcome</p>
-    <p>
-      Generated 5–6 vetted ideas, reduced manual ideation effort, and enabled
-      structured comparison and reuse of engineering concepts.
-    </p>
-  </div>
+      <p class="label">System Design</p>
+      <p>
+        Historical ideas → NLP-based clustering → AI-driven idea generation →
+        rejection classification → human-in-the-loop evaluation → finalized ideas.
+      </p>
+
+      <p class="label">My Role</p>
+      <p>
+        Led problem framing, model strategy definition, evaluation criteria
+        design, and integration into engineering decision workflows.
+      </p>
+
+      <p class="label">Outcome</p>
+      <p>
+        Generated 5–6 vetted ideas, reduced manual ideation effort, and enabled
+        structured comparison and reuse of engineering concepts.
+      </p>
+    </div>
+
+  </main>
 
 </div>
 
