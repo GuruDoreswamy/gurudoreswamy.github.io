@@ -6,17 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background: #0b0f14;
       color: #ffffff;
-      margin: 0;
-      padding: 60px 20px;
     }
 
+    /* ===== Top Navigation ===== */
+    .top-nav {
+      width: 100%;
+      padding: 20px 40px;
+      background: #0e141b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav a {
+      color: #b3b3b3;
+      text-decoration: none;
+      font-size: 0.95em;
+      margin-left: 20px;
+    }
+
+    .top-nav a:hover,
+    .top-nav a.active {
+      color: #ffffff;
+    }
+
+    .brand {
+      font-weight: 600;
+      font-size: 1em;
+      color: #ffffff;
+    }
+
+    /* ===== Page Container ===== */
     .container {
       max-width: 900px;
-      margin: auto;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
     h1 {
@@ -30,6 +64,7 @@
       font-size: 1.2em;
     }
 
+    /* ===== Project Card ===== */
     .project {
       background: #0e141b;
       padding: 30px;
@@ -45,18 +80,39 @@
     .project p {
       line-height: 1.6;
       color: #d0d0d0;
+      margin-bottom: 12px;
     }
 
     .label {
       color: #4f83cc;
       font-weight: 600;
-      margin-top: 20px;
+      margin-top: 18px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .top-nav {
+        padding: 15px 20px;
+      }
+      h1 {
+        font-size: 2.2em;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- ===== Navigation ===== -->
+<header class="top-nav">
+  <div class="brand">Guruprasad Doreswamy</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+  </nav>
+</header>
+
+<!-- ===== Content ===== -->
 <div class="container">
 
   <h1>AI / ML Portfolio</h1>
@@ -89,18 +145,16 @@
 
     <p class="label">My Role</p>
     <p>
-      Led problem framing, model strategy selection, evaluation criteria
-      definition, and integration into existing engineering decision workflows.
+      Led problem framing, model strategy definition, evaluation criteria
+      design, and integration into engineering decision workflows.
     </p>
 
     <p class="label">Outcome</p>
     <p>
       Generated 5–6 vetted ideas, reduced manual ideation effort, and enabled
-      structured comparison and reuse of past engineering concepts.
+      structured comparison and reuse of engineering concepts.
     </p>
   </div>
-
-  <!-- You can add more AI/ML projects below in the same format -->
 
 </div>
 
