@@ -28,7 +28,7 @@
       height: 100vh;
     }
 
-    /* ===== Sidebar (SAME AS INDEX) ===== */
+    /* ===== Sidebar ===== */
     .sidebar {
       width: 270px;
       background: #0e141b;
@@ -101,7 +101,7 @@
       color: #ffffff;
     }
 
-    /* ===== Content Area (Right Side) ===== */
+    /* ===== Content Area ===== */
     .content {
       flex: 1;
       padding: 60px 80px;
@@ -115,33 +115,50 @@
 
     .subtitle {
       color: #b3b3b3;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       font-size: 1.2em;
     }
 
-    /* ===== Project Card ===== */
+    /* ===== Project Card (Production Grade) ===== */
     .project {
-      background: #0e141b;
-      padding: 30px;
-      border-radius: 10px;
-      margin-bottom: 40px;
+      background: linear-gradient(180deg, #0e141b 0%, #0c1117 100%);
+      border: 1px solid #1f2a36;
+      padding: 36px;
+      border-radius: 12px;
+      margin-bottom: 50px;
     }
 
     .project h2 {
-      font-size: 1.8em;
-      margin-bottom: 15px;
+      font-size: 2.1em;
+      margin-bottom: 30px;
+      letter-spacing: 0.3px;
     }
 
-    .project p {
-      line-height: 1.6;
-      color: #d0d0d0;
-      margin-bottom: 12px;
+    .project-section {
+      margin-bottom: 34px;
+      padding-left: 18px;
+      border-left: 3px solid #4f83cc;
     }
 
-    .label {
-      color: #4f83cc;
+    .project-section h3 {
+      font-size: 0.95em;
       font-weight: 600;
-      margin-top: 18px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .project-section p {
+      font-size: 1.02em;
+      line-height: 1.7;
+      color: #d0d0d0;
+      margin-bottom: 10px;
+    }
+
+    .project strong {
+      color: #ffffff;
+      font-weight: 600;
     }
 
     /* ===== Responsive ===== */
@@ -151,7 +168,7 @@
       }
 
       .content {
-        padding: 40px 20px;
+        padding: 40px 24px;
       }
     }
   </style>
@@ -163,22 +180,14 @@
 
   <!-- ===== Sidebar ===== -->
   <aside class="sidebar">
-    <img src="assets/profile.jpg"
-         class="profile-pic"
-         alt="Profile photo">
+    <img src="assets/profile.jpg" class="profile-pic" alt="Profile photo">
 
     <h2>Guruprasad Doreswamy</h2>
 
     <div class="social-icons">
-      <a href="https://github.com/gurudoreswamy" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://yourwebsite.com" target="_blank" aria-label="Website">
-        <i class="fas fa-globe"></i>
-      </a>
+      <a href="https://github.com/gurudoreswamy" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://yourwebsite.com" target="_blank"><i class="fas fa-globe"></i></a>
     </div>
 
     <nav class="menu">
@@ -197,59 +206,72 @@
       Decision-support systems for engineering, innovation, and scale
     </p>
 
-    <!-- Project 1 -->
     <div class="project">
+
       <h2>AI-Driven Idea Generation & Evaluation</h2>
 
-      <p class="label">Business Objective</p>
-      <p>
-        The objective was to realize <strong>USD 1.5M in cost savings</strong> across
-        <strong>15 product programs</strong> through structured idea generation.
-        Approximately <strong>250 contributors</strong> were expected to generate
-        <strong>8–10 ideas each</strong>, resulting in <strong>~2,000 ideas</strong>
-        at the enterprise level.
-      </p>
+      <div class="project-section">
+        <h3>Business Objective</h3>
+        <p>
+          The objective was to realize <strong>USD 1.5M in cost savings</strong> across
+          <strong>15 product programs</strong> through structured idea generation.
+          Approximately <strong>250 contributors</strong> were expected to generate
+          <strong>8–10 ideas each</strong>, resulting in <strong>~2,000 ideas</strong>
+          at the enterprise level.
+        </p>
+      </div>
 
-      <p class="label">Problem Statement</p>
-      <p>
-        The existing idea generation process was <strong>too slow and manual</strong>
-        to meet the required scale. As participation increased, idea throughput
-        did not keep pace and evaluation consistency varied across teams.
-      </p>
+      <div class="project-section">
+        <h3>Problem Statement</h3>
+        <p>
+          The existing idea generation process was <strong>too slow and manual</strong>
+          to meet the required scale. As participation increased, idea throughput
+          did not keep pace and evaluation consistency varied across teams.
+        </p>
+        <p>
+          With scale, the effective approval rate dropped from
+          <strong>~30% to ~10%</strong>, significantly reducing the number of
+          implementable ideas and putting the savings target at risk.
+        </p>
+      </div>
 
-      <p>
-        With scale, the effective approval rate dropped from ~30% to ~10%,
-        significantly reducing the number of implementable ideas and putting
-        the savings target at risk.
-      </p>
+      <div class="project-section">
+        <h3>Approach</h3>
+        <p>
+          Designed an AI-assisted idea generation and evaluation pipeline that
+          treats ideation as a structured decision process rather than ad-hoc
+          brainstorming.
+        </p>
+      </div>
 
-      <p class="label">Approach</p>
-      <p>
-        Designed an AI-assisted idea generation and evaluation pipeline that
-        treats ideation as a structured decision process rather than ad-hoc
-        brainstorming.
-      </p>
+      <div class="project-section">
+        <h3>System Design</h3>
+        <p>
+          Contributors → Idea Pool (~2,000 ideas) → NLP-based exploration and
+          clustering → AI-driven idea generation → rejection classification →
+          human-in-the-loop evaluation → approved ideas (~200) → implemented
+          ideas (~20).
+        </p>
+      </div>
 
-      <p class="label">System Design</p>
-      <p>
-        Contributors → Idea Pool (~2,000 ideas) → NLP-based exploration and
-        clustering → AI-driven idea generation → rejection classification →
-        human-in-the-loop evaluation → approved ideas (~200) → implemented ideas (~20).
-      </p>
+      <div class="project-section">
+        <h3>My Role</h3>
+        <p>
+          Led problem framing, defined success metrics aligned to business value,
+          designed the end-to-end system architecture, and integrated the solution
+          into enterprise-level engineering workflows.
+        </p>
+      </div>
 
-      <p class="label">My Role</p>
-      <p>
-        Led problem framing, defined success metrics aligned to business value,
-        designed the end-to-end system architecture, and integrated the solution
-        into enterprise-level engineering workflows.
-      </p>
+      <div class="project-section">
+        <h3>Outcome</h3>
+        <p>
+          Improved ideation throughput, enabled structured filtering at scale,
+          generated multiple vetted ideas for implementation, and strengthened
+          traceability between ideas, decisions, and business outcomes.
+        </p>
+      </div>
 
-      <p class="label">Outcome</p>
-      <p>
-        Improved ideation throughput, enabled structured filtering at scale,
-        generated multiple vetted ideas for implementation, and strengthened
-        traceability between ideas, decisions, and business outcomes.
-      </p>
     </div>
 
   </main>
