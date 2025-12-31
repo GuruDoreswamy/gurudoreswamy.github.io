@@ -100,7 +100,6 @@
       text-decoration: none;
       color: #b3b3b3;
       border-radius: 6px;
-      font-family: "Open Sans", sans-serif;
     }
 
     .menu a.active,
@@ -142,12 +141,11 @@
       font-family: "Roboto", sans-serif;
       font-size: 2.1em;
       margin-bottom: 30px;
-      letter-spacing: 0.3px;
       color: #0e141b;
     }
 
     .project-section {
-      margin-bottom: 34px;
+      margin-bottom: 36px;
       padding-left: 18px;
       border-left: 3px solid #4f83cc;
     }
@@ -169,9 +167,30 @@
       margin-bottom: 10px;
     }
 
-    .project strong {
-      color: #0e141b;
+    /* ===== Pipeline ===== */
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .pipeline-step {
+      background: #f1f3f5;
+      border: 1px solid #dfe3e8;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.95em;
       font-weight: 600;
+      color: #1f2a36;
+      display: flex;
+      align-items: center;
+    }
+
+    .pipeline-arrow {
+      font-weight: 600;
+      color: #4f83cc;
+      padding: 0 4px;
     }
 
     /* ===== Responsive ===== */
@@ -258,13 +277,21 @@
       </div>
 
       <div class="project-section">
-        <h3>System Design</h3>
-        <p>
-          Contributors → Idea Pool (~2,000 ideas) → NLP-based exploration and
-          clustering → AI-driven idea generation → rejection classification →
-          human-in-the-loop evaluation → approved ideas (~200) → implemented
-          ideas (~20).
-        </p>
+        <h3>End-to-End Pipeline</h3>
+
+        <div class="pipeline">
+          <div class="pipeline-step">EDA</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">Idea Generation</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">Classification</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">Embeddings</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">Scoring</div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">Finalised Idea</div>
+        </div>
       </div>
 
       <div class="project-section">
